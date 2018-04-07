@@ -2,6 +2,8 @@ package com.asange.aop;
 
 import com.asange.aop.security.CurrentSetHolder;
 import com.asange.aop.service.ProductService;
+import com.asange.aop.service.ProductService2;
+import com.asange.aop.service.ProductService3;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,11 @@ public class AopTestApplicationTests {
 
 
     @Autowired
-    ProductService productService;
+    ProductService3 productService;
 
     @Test
     public void testInsert() {
-        CurrentSetHolder.set("testuser");
+        CurrentSetHolder.set("admin");
         productService.insert();
     }
 
